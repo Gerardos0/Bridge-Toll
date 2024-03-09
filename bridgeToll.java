@@ -1,31 +1,21 @@
 import java.lang.Math;
-
 import java.util.Random;
-
 import java.util.Scanner;
 
 public class bridgeToll{
-
     public static void main(String[] args){
-
 	//Set Scanner
 	Scanner scan = new Scanner(System.in);
-
 	//Set Random
 	Random rand =new Random();
-
 	//Create a random value for the number of vehicles
 	int n_cars = rand.nextInt(3)+1;
-
 	//initializing i and all_passengers
 	int i, all_passengers;
-
 	//initialize car_type_fee and car_size_fee
 	double car_type_fee, car_size_fee;
-
 	//initializing total as 0 for the end of the for loop
 	double total=0;
-
 	//Prompt user to enter the value for passenger_fee
 	System.out.println("Enter a value for passenger fee: ");
 	int passenger_fee = scan.nextInt();
@@ -109,7 +99,6 @@ public class bridgeToll{
 		}
 
 		if(car_size==1){
-
 			//Establish if the car_type is a commercial vehicle or passenger vehicle
 			System.out.println("Enter car type, commercial vehicle(1) or passenger vehicle (2): ");
 			int car_type=scan.nextInt();
@@ -119,12 +108,11 @@ public class bridgeToll{
 				System.out.println("Enter a valid car type, commercial vehicle(1) or passenger vehicle (2): ");
 				car_type=scan.nextInt();
 			}
-
+			
 			//Assign the proper fee for the car type
 			if(car_type==1){
 				car_type_fee=car_type_fee_commercial;
 			}
-
 			else{
 				car_type_fee=car_type_fee_passenger;
 			}	
@@ -161,7 +149,6 @@ public class bridgeToll{
 			//Setting passengers under as 0.75 of a person accounts for the discout they have.
 			//Finding the total cost for a fast pass per car
 			double each_car_cost =((all_passengers-under_18)*passenger_fee +((under_18*passenger_fee)*(25/100)))/car_size_fee_large + Math.pow(weight,(.5))+car_type_fee;
-
 			//Finding the total cost of all the fast passes.
 			total =total+each_car_cost;
 
